@@ -9,8 +9,6 @@ const FeaturedProducts = ({ type }) => {
     `/products?populate=*&[filters][type][$eq]=${type}`
   )
 
-  console.log(data);
-
   return (
     <div className='featuredProducts'>
       <div className='top'>
@@ -24,7 +22,7 @@ const FeaturedProducts = ({ type }) => {
           ? "Something went wrong!" 
           : loading 
           ? "loading..." 
-          : data.map((item) => (<Card item={item} key={item.id} />))
+          : data?.map((item) => (<Card item={item} key={item.id} />))
         }
       </div>
     </div>

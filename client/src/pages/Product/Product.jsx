@@ -14,8 +14,6 @@ const Product = () => {
 
   const { data, loading, error } = useFetch(`/products/${id}?populate=*`);
 
-  console.log(id);
-
   return (
     <div className='product'>
       { loading ? (
